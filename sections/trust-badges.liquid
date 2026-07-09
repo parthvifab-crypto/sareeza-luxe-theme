@@ -1,0 +1,49 @@
+<section class="section-padding">
+  <div class="page-width">
+    <div class="badge-row">
+      {% for block in section.blocks %}
+        <div class="badge" {{ block.shopify_attributes }}>
+          <strong>{{ block.settings.title }}</strong>
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trust badges",
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Premium Quality"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Selected ethnic styles"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trust badges",
+      "blocks": [
+        { "type": "badge", "settings": { "title": "Premium Quality", "text": "Curated ethnic fashion" } },
+        { "type": "badge", "settings": { "title": "Secure Checkout", "text": "Safe online payment" } },
+        { "type": "badge", "settings": { "title": "Fast Dispatch", "text": "Order processing support" } },
+        { "type": "badge", "settings": { "title": "Easy Support", "text": "Customer-first service" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
