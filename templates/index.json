@@ -12,9 +12,9 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "eyebrow": "Sareeza Luxe",
-        "heading": "Ethnic Wear Collection",
-        "button_label": "Shop Now",
+        "eyebrow": "New Collection 2026",
+        "heading": "Premium Ethnic Wear For Women",
+        "button_label": "Shop Collection",
         "button_link": ""
       }
     },
@@ -31,21 +31,21 @@
         "category_mGACJQ": {
           "type": "category",
           "settings": {
-            "title": "Sarees",
+            "title": "Kurti Sets",
             "link": ""
           }
         },
         "category_PYAAdG": {
           "type": "category",
           "settings": {
-            "title": "Sarees",
+            "title": "Ready To Wear",
             "link": ""
           }
         },
         "category_7M4DRc": {
           "type": "category",
           "settings": {
-            "title": "Sarees",
+            "title": "Festive Wear",
             "link": ""
           }
         }
@@ -58,14 +58,14 @@
       ],
       "settings": {
         "heading": "Shop by Category",
-        "text": "Choose your favourite ethnic style."
+        "text": "Explore premium ethnic styles for daily wear, festive wear and special occasions."
       }
     },
     "new_arrivals": {
       "type": "featured-collection",
       "settings": {
         "heading": "New Arrivals",
-        "text": "Fresh ethnic styles added recently.",
+        "text": "Fresh styles added recently for your ethnic wardrobe.",
         "collection": "",
         "products_to_show": 8
       }
@@ -73,8 +73,8 @@
     "ready_to_wear": {
       "type": "featured-collection",
       "settings": {
-        "heading": "Ready To Wear Saree",
-        "text": "Easy drape sarees and occasion-ready styles.",
+        "heading": "Ready To Wear Collection",
+        "text": "Easy-to-style sarees and outfits made for comfort and elegance.",
         "collection": "",
         "products_to_show": 8
       }
@@ -82,8 +82,8 @@
     "best_seller": {
       "type": "featured-collection",
       "settings": {
-        "heading": "Best Seller",
-        "text": "Most loved products from our catalog.",
+        "heading": "Best Sellers",
+        "text": "Most loved ethnic wear picks from our catalog.",
         "collection": "",
         "products_to_show": 8
       }
@@ -91,10 +91,10 @@
     "image_banner": {
       "type": "image-banner",
       "settings": {
-        "eyebrow": "Special Collection",
-        "heading": "Festive Ethnic Looks",
-        "text": "Banner image can be changed later from Shopify theme editor.",
-        "button_label": "Explore Collection",
+        "eyebrow": "Festive Edit",
+        "heading": "Elegant Looks For Every Occasion",
+        "text": "Update banner image and collection links later from Shopify theme editor.",
+        "button_label": "Explore Now",
         "button_link": ""
       }
     },
@@ -106,7 +106,7 @@
       "type": "newsletter",
       "settings": {
         "heading": "Join Sareeza Luxe",
-        "text": "Get updates on new ethnic collections, festive drops and styling inspiration.",
+        "text": "Get updates on new drops, festive collections and styling ideas.",
         "button_label": "Subscribe"
       }
     }
