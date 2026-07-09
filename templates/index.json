@@ -4,13 +4,33 @@
       "type": "hero",
       "settings": {}
     },
+    "shop_by_category": {
+      "type": "shop-by-category",
+      "settings": {}
+    },
     "featured_collection": {
       "type": "featured-collection",
+      "settings": {}
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "settings": {}
+    },
+    "trust_badges": {
+      "type": "trust-badges",
+      "settings": {}
+    },
+    "newsletter": {
+      "type": "newsletter",
       "settings": {}
     }
   },
   "order": [
     "hero",
-    "featured_collection"
+    "shop_by_category",
+    "featured_collection",
+    "image_banner",
+    "trust_badges",
+    "newsletter"
   ]
 }
