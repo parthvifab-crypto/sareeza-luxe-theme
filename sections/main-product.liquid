@@ -1,0 +1,65 @@
+<section class="section-padding">
+  <div class="page-width product-page">
+    <div class="product-gallery">
+      {% if product.media.size > 0 %}
+        {% for media in product.media limit: 6 %}
+          {% if media.media_type == 'image' %}
+            {{ media | image_url: width: 1200 | image_tag: loading: 'lazy', alt: product.title }}
+          {% endif %}
+        {% endfor %}
+      {% elsif product.featured_image != blank %}
+        {{ product.featured_image | image_url: width: 1200 | image_tag: loading: 'eager', alt: product.title }}
+      {% else %}
+        {{ 'product-1' | placeholder_svg_tag }}
+      {% endif %}
+    </div>
+
+    <div class="product-info">
+      {% if product.vendor != blank %}
+        <p class="hero__eyebrow">{{ product.vendor }}</p>
+      {% endif %}
+
+      <h1 class="product-title">{{ product.title }}</h1>
+      {% render 'price', product: product %}
+
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+        {% unless product.has_only_default_variant %}
+          <label for="ProductSelect-{{ section.id }}">Options</label>
+          <select id="ProductSelect-{{ section.id }}" name="id">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+            {% endfor %}
+          </select>
+        {% endunless %}
+
+        <label for="Quantity-{{ section.id }}">Quantity</label>
+        <div class="quantity" data-quantity-wrapper>
+          <button type="button" data-quantity-button="minus">-</button>
+          <input id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1">
+          <button type="button" data-quantity-button="plus">+</button>
+        </div>
+
+        <button type="submit" class="btn" style="margin-top:18px;width:100%;">
+          {{ 'products.product.add_to_cart' | t }}
+        </button>
+
+        {{ form | payment_button }}
+      {% endform %}
+
+      <div class="rte" style="margin-top:28px;">
+        {{ product.description }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main product",
+  "settings": []
+}
+{% endschema %}
