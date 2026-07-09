@@ -1,0 +1,19 @@
+<article class="section-padding">
+  <div class="page-width" style="max-width:900px;">
+    <p class="hero__eyebrow">{{ blog.title }}</p>
+    <h1 class="section-title">{{ article.title }}</h1>
+    {% if article.image != blank %}
+      {{ article.image | image_url: width: 1200 | image_tag: loading: 'eager', alt: article.title }}
+    {% endif %}
+    <div class="rte" style="margin-top:28px;">
+      {{ article.content }}
+    </div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Main article",
+  "settings": []
+}
+{% endschema %}
