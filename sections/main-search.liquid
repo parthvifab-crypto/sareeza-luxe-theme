@@ -1,0 +1,28 @@
+<section class="section-padding">
+  <div class="page-width">
+    <h1 class="section-title">Search</h1>
+
+    <form action="{{ routes.search_url }}" method="get" role="search" style="max-width:640px;margin-bottom:32px;">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search sarees, kurtis, ethnic wear" style="width:100%;padding:14px 18px;border:1px solid #ead8de;border-radius:999px;">
+      <button type="submit" class="btn" style="margin-top:12px;">Search</button>
+    </form>
+
+    {% if search.performed %}
+      <p>{{ search.results_count }} results for “{{ search.terms }}”</p>
+      <div class="grid grid--4">
+        {% for item in search.results %}
+          {% if item.object_type == 'product' %}
+            {% render 'product-card', product: item %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main search",
+  "settings": []
+}
+{% endschema %}
