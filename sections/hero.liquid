@@ -1,12 +1,19 @@
-<section class="hero">
-  <div class="page-width hero__content">
+<section class="lf-hero">
+  {% if section.settings.image != blank %}
+    {{ section.settings.image | image_url: width: 1800 | image_tag: loading: 'eager', class: 'lf-hero__image', alt: section.settings.heading }}
+  {% else %}
+    <div class="lf-hero__placeholder">
+      {{ 'lifestyle-1' | placeholder_svg_tag }}
+    </div>
+  {% endif %}
+
+  <div class="lf-hero__content">
     {% if section.settings.eyebrow != blank %}
-      <div class="hero__eyebrow">{{ section.settings.eyebrow }}</div>
+      <span>{{ section.settings.eyebrow }}</span>
     {% endif %}
-    <h1 class="hero__title">{{ section.settings.heading }}</h1>
-    <p class="hero__text">{{ section.settings.text }}</p>
+    <h1>{{ section.settings.heading }}</h1>
     {% if section.settings.button_label != blank %}
-      <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="btn">
+      <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="lf-hero__button">
         {{ section.settings.button_label }}
       </a>
     {% endif %}
@@ -18,28 +25,27 @@
   "name": "Hero banner",
   "settings": [
     {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image"
+    },
+    {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow",
-      "default": "Sareeza Luxe"
+      "label": "Small text",
+      "default": "New Collection"
     },
     {
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "Luxury Ethnic Wear for Every Occasion"
-    },
-    {
-      "type": "textarea",
-      "id": "text",
-      "label": "Text",
-      "default": "Discover premium sarees, kurtis and festive fashion crafted for modern Indian women."
+      "default": "Designer Sarees"
     },
     {
       "type": "text",
       "id": "button_label",
       "label": "Button label",
-      "default": "Shop Collection"
+      "default": "Shop Now"
     },
     {
       "type": "url",
