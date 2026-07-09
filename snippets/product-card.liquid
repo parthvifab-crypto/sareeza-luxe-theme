@@ -1,5 +1,8 @@
 <article class="product-card">
   <a href="{{ product.url }}" class="product-card__media">
+    {% if product.compare_at_price > product.price %}
+      <span class="product-card__sale">SALE</span>
+    {% endif %}
     {% if product.featured_image != blank %}
       {{ product.featured_image | image_url: width: 700 | image_tag: loading: 'lazy', alt: product.title }}
     {% else %}
@@ -11,6 +14,8 @@
     <h3 class="product-card__title">
       <a href="{{ product.url }}">{{ product.title }}</a>
     </h3>
-    {% render 'price', product: product %}
+    <div class="product-card__price-row">
+      {% render 'price', product: product %}
+    </div>
   </div>
 </article>
