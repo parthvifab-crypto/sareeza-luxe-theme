@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -5,12 +14,48 @@
       "settings": {
         "eyebrow": "Sareeza Luxe",
         "heading": "Ethnic Wear Collection",
-        "text": "Shop sarees, kurtis, co-ord sets and festive wear in a clean catalog experience.",
-        "button_label": "Shop Now"
+        "button_label": "Shop Now",
+        "button_link": ""
       }
     },
     "shop_by_category": {
       "type": "shop-by-category",
+      "blocks": {
+        "category_cNbjqR": {
+          "type": "category",
+          "settings": {
+            "title": "Sarees",
+            "link": ""
+          }
+        },
+        "category_mGACJQ": {
+          "type": "category",
+          "settings": {
+            "title": "Sarees",
+            "link": ""
+          }
+        },
+        "category_PYAAdG": {
+          "type": "category",
+          "settings": {
+            "title": "Sarees",
+            "link": ""
+          }
+        },
+        "category_7M4DRc": {
+          "type": "category",
+          "settings": {
+            "title": "Sarees",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_cNbjqR",
+        "category_mGACJQ",
+        "category_PYAAdG",
+        "category_7M4DRc"
+      ],
       "settings": {
         "heading": "Shop by Category",
         "text": "Choose your favourite ethnic style."
@@ -21,6 +66,7 @@
       "settings": {
         "heading": "New Arrivals",
         "text": "Fresh ethnic styles added recently.",
+        "collection": "",
         "products_to_show": 8
       }
     },
@@ -29,6 +75,7 @@
       "settings": {
         "heading": "Ready To Wear Saree",
         "text": "Easy drape sarees and occasion-ready styles.",
+        "collection": "",
         "products_to_show": 8
       }
     },
@@ -37,6 +84,7 @@
       "settings": {
         "heading": "Best Seller",
         "text": "Most loved products from our catalog.",
+        "collection": "",
         "products_to_show": 8
       }
     },
@@ -46,7 +94,8 @@
         "eyebrow": "Special Collection",
         "heading": "Festive Ethnic Looks",
         "text": "Banner image can be changed later from Shopify theme editor.",
-        "button_label": "Explore Collection"
+        "button_label": "Explore Collection",
+        "button_link": ""
       }
     },
     "trust_badges": {
@@ -55,7 +104,11 @@
     },
     "newsletter": {
       "type": "newsletter",
-      "settings": {}
+      "settings": {
+        "heading": "Join Sareeza Luxe",
+        "text": "Get updates on new ethnic collections, festive drops and styling inspiration.",
+        "button_label": "Subscribe"
+      }
     }
   },
   "order": [
