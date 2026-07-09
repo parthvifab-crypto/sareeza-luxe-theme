@@ -2,19 +2,52 @@
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Sareeza Luxe",
+        "heading": "Ethnic Wear Collection",
+        "text": "Shop sarees, kurtis, co-ord sets and festive wear in a clean catalog experience.",
+        "button_label": "Shop Now"
+      }
     },
     "shop_by_category": {
       "type": "shop-by-category",
-      "settings": {}
+      "settings": {
+        "heading": "Shop by Category",
+        "text": "Choose your favourite ethnic style."
+      }
     },
-    "featured_collection": {
+    "new_arrivals": {
       "type": "featured-collection",
-      "settings": {}
+      "settings": {
+        "heading": "New Arrivals",
+        "text": "Fresh ethnic styles added recently.",
+        "products_to_show": 8
+      }
+    },
+    "ready_to_wear": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Ready To Wear Saree",
+        "text": "Easy drape sarees and occasion-ready styles.",
+        "products_to_show": 8
+      }
+    },
+    "best_seller": {
+      "type": "featured-collection",
+      "settings": {
+        "heading": "Best Seller",
+        "text": "Most loved products from our catalog.",
+        "products_to_show": 8
+      }
     },
     "image_banner": {
       "type": "image-banner",
-      "settings": {}
+      "settings": {
+        "eyebrow": "Special Collection",
+        "heading": "Festive Ethnic Looks",
+        "text": "Banner image can be changed later from Shopify theme editor.",
+        "button_label": "Explore Collection"
+      }
     },
     "trust_badges": {
       "type": "trust-badges",
@@ -28,7 +61,9 @@
   "order": [
     "hero",
     "shop_by_category",
-    "featured_collection",
+    "new_arrivals",
+    "ready_to_wear",
+    "best_seller",
     "image_banner",
     "trust_badges",
     "newsletter"
