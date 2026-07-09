@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Theme information",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Sareeza Luxe - Shopify OS 2.0 premium ethnic fashion theme."
+      }
+    ]
+  },
+  {
+    "name": "Brand settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      },
+      {
+        "type": "color",
+        "id": "primary_color",
+        "label": "Primary color",
+        "default": "#8A1538"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent gold color",
+        "default": "#C9A24A"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#201418"
+      }
+    ]
+  },
+  {
+    "name": "Store messages",
+    "settings": [
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement text",
+        "default": "New ethnic collection is live - shop festive styles today"
+      },
+      {
+        "type": "text",
+        "id": "trust_text",
+        "label": "Trust text",
+        "default": "Premium ethnic wear | Easy shopping | Secure checkout"
+      }
+    ]
+  }
+]
