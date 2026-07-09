@@ -1,0 +1,68 @@
+<section class="section-padding">
+  <div class="page-width">
+    <div class="newsletter" style="text-align:left;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;">
+      <div>
+        <p class="hero__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="section-title">{{ section.settings.heading }}</h2>
+        <p class="section-subtitle">{{ section.settings.text }}</p>
+        {% if section.settings.button_label != blank %}
+          <a href="{{ section.settings.button_link | default: routes.all_products_collection_url }}" class="btn btn--gold">{{ section.settings.button_label }}</a>
+        {% endif %}
+      </div>
+      <div>
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: section.settings.heading }}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag }}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Festive Looks Made Premium"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Create a luxury ethnic wardrobe with elegant sarees, kurta sets and occasion wear."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Explore Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image banner"
+    }
+  ]
+}
+{% endschema %}
