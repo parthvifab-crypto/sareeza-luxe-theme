@@ -1,0 +1,61 @@
+<section class="section-padding">
+  <div class="page-width">
+    <h1 class="section-title">{{ 'cart.general.title' | t }}</h1>
+
+    {% if cart.item_count > 0 %}
+      <form action="{{ routes.cart_url }}" method="post">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in cart.items %}
+              <tr>
+                <td>
+                  <div style="display:flex;gap:14px;align-items:center;">
+                    {% if item.image %}
+                      {{ item.image | image_url: width: 120 | image_tag: loading: 'lazy', alt: item.product.title }}
+                    {% endif %}
+                    <div>
+                      <a href="{{ item.url }}"><strong>{{ item.product.title }}</strong></a>
+                      <p>{{ item.variant.title }}</p>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" style="max-width:90px;">
+                </td>
+                <td>{{ item.final_line_price | money }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+        <div class="cart-summary">
+          <p>{{ 'cart.general.subtotal' | t }}</p>
+          <h2>{{ cart.total_price | money }}</h2>
+          <button class="btn btn--secondary" type="submit" name="update">Update cart</button>
+          <button class="btn" type="submit" name="checkout" style="margin-top:10px;width:100%;">
+            {{ 'cart.general.checkout' | t }}
+          </button>
+        </div>
+      </form>
+    {% else %}
+      <div class="empty-state">
+        <h2>{{ 'cart.general.empty' | t }}</h2>
+        <a href="{{ routes.all_products_collection_url }}" class="btn">Continue shopping</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Main cart",
+  "settings": []
+}
+{% endschema %}
