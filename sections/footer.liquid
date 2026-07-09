@@ -1,0 +1,73 @@
+<footer class="footer">
+  <div class="page-width footer__grid">
+    <div>
+      <h2>{{ shop.name }}</h2>
+      <p>{{ section.settings.about }}</p>
+    </div>
+
+    <div>
+      <h3>{{ section.settings.menu_1_title }}</h3>
+      {% for link in section.settings.menu_1.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>{{ section.settings.menu_2_title }}</h3>
+      {% for link in section.settings.menu_2.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>{{ section.settings.contact_text }}</p>
+    </div>
+  </div>
+
+  <div class="page-width footer__bottom">
+    © {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "about",
+      "label": "About text",
+      "default": "Premium ethnic fashion designed for timeless elegance."
+    },
+    {
+      "type": "text",
+      "id": "menu_1_title",
+      "label": "Menu 1 title",
+      "default": "Shop"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu 1"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_title",
+      "label": "Menu 2 title",
+      "default": "Support"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu 2"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_text",
+      "label": "Contact text",
+      "default": "Surat, Gujarat, India"
+    }
+  ]
+}
+{% endschema %}
