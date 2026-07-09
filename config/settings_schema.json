@@ -1,12 +1,11 @@
 [
   {
-    "name": "Theme information",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "Sareeza Luxe - Shopify OS 2.0 premium ethnic fashion theme."
-      }
-    ]
+    "name": "theme_info",
+    "theme_name": "Sareeza Luxe",
+    "theme_author": "Parthvi Fab",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://github.com/parthvifab-crypto/sareeza-luxe-theme",
+    "theme_support_url": "https://github.com/parthvifab-crypto/sareeza-luxe-theme"
   },
   {
     "name": "Brand settings",
