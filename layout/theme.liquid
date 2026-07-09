@@ -18,7 +18,7 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
-    {{ canonical_url | canonical_url }}
+    <link rel="canonical" href="{{ canonical_url }}">
     {{ content_for_header }}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
