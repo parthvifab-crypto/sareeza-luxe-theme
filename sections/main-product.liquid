@@ -23,28 +23,32 @@
       {% render 'price', product: product %}
 
       {% form 'product', product %}
-        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-
-        {% unless product.has_only_default_variant %}
+        {% if product.has_only_default_variant %}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        {% else %}
           <label for="ProductSelect-{{ section.id }}">Options</label>
-          <select id="ProductSelect-{{ section.id }}" name="id">
+          <select id="ProductSelect-{{ section.id }}" name="id" style="width:100%;padding:12px 14px;border:1px solid #ead8de;border-radius:14px;margin:8px 0 16px;">
             {% for variant in product.variants %}
-              <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %}>
-                {{ variant.title }} - {{ variant.price | money }}
+              <option value="{{ variant.id }}" {% if variant == product.selected_or_first_available_variant %}selected{% endif %} {% unless variant.available %}disabled{% endunless %}>
+                {{ variant.title }} - {{ variant.price | money }}{% unless variant.available %} - Sold out{% endunless %}
               </option>
             {% endfor %}
           </select>
-        {% endunless %}
+        {% endif %}
 
         <label for="Quantity-{{ section.id }}">Quantity</label>
         <div class="quantity" data-quantity-wrapper>
-          <button type="button" data-quantity-button="minus">-</button>
+          <button type="button" data-quantity-button="minus" aria-label="Decrease quantity">-</button>
           <input id="Quantity-{{ section.id }}" type="number" name="quantity" value="1" min="1">
-          <button type="button" data-quantity-button="plus">+</button>
+          <button type="button" data-quantity-button="plus" aria-label="Increase quantity">+</button>
         </div>
 
-        <button type="submit" class="btn" style="margin-top:18px;width:100%;">
-          {{ 'products.product.add_to_cart' | t }}
+        <button type="submit" class="btn" style="margin-top:18px;width:100%;" {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}>
+          {% if product.selected_or_first_available_variant.available %}
+            {{ 'products.product.add_to_cart' | t }}
+          {% else %}
+            {{ 'products.product.sold_out' | t }}
+          {% endif %}
         </button>
 
         {{ form | payment_button }}
